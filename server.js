@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-// var routes = require('./controllers/game-controller.js')
+var routes = require('./controllers/game-controller.js')
 
-// app.use('/', routes)
+app.use('/', routes)
 
 app.listen(PORT, () => {
 	console.log(`App listening on ${PORT}`)
