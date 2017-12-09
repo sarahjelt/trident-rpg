@@ -12,11 +12,11 @@ CREATE TABLE all_games (
 	id int NOT NULL AUTO_INCREMENT,
 	first_player varchar(50) NOT NULL,
 	second_player varchar(50),
-	game_status varchar(10) NOT NULL,
+	game_complete boolean NOT NULL,
 	first_player_score int NOT NULL,
 	second_player_score int NOT NULL,
 	turn varchar(50) NOT NULL,
-	need_player boolean NOT NULL
+	need_player boolean NOT NULL,
 	PRIMARY KEY (id)
 )
 
