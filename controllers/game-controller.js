@@ -13,4 +13,8 @@ router.get('/', (request, result) => {
 	// })
 })
 
+router.get('/game', (request, result) => {
+	result.render('index', {layout: 'phaser.handlebars'})
+})
+
 module.exports = router
