@@ -18,8 +18,7 @@ module.exports = function(sequelize, DataTypes) {
 		Users.hasOne(models.Games, {
 			foreignKey: {
 				allowNull: false
-			},
-			targetKey: id
+			}
 		})
 	}
 

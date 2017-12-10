@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		},
 		need_player: {
-			type: DataTypes.STRING,
+			type: DataTypes.BOOLEAN,
 			allowNull: false
 		},
 		game_complete: {
