@@ -5,6 +5,8 @@ var PORT = 3000
 
 var app = express()
 
+var db = require('./models')
+
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -14,6 +16,8 @@ var routes = require('./controllers/game-controller.js')
 
 app.use('/', routes)
 
-app.listen(PORT, () => {
-	console.log(`App listening on ${PORT}`)
+db.sequelize.sync().then(function() {
+	app.listen(PORT, () => {
+		console.log(`App listening on ${PORT}`)
+	})	
 })
