@@ -12,9 +12,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-var routes = require('./controllers/game-controller.js')
+var htmlRoutes = require('./controllers/game-controller.js')
+var apiRoutes = require('./controllers/api-controller.js')
 
-app.use('/', routes)
+app.use('/', htmlRoutes)
+app.use('/api', apiRoutes)
 
 db.sequelize.sync().then(function() {
 	app.listen(PORT, () => {
