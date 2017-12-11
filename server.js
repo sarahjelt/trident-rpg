@@ -7,6 +7,8 @@ var env = require('dotenv').load()
 var passport = require("passport")
 var PORT = process.env.PORT || 3000
 
+var db = require('./models')
+
 app.use(express.static("public"))
 
 //BodyParser
@@ -47,3 +49,4 @@ db.sequelize.sync().then(function() {
   }).catch(function(err) {
     console.log(err, "SOmething went wrong with the DB update")
 });
+
