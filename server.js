@@ -1,26 +1,49 @@
 var express = require('express')
+var app = express()
 var session = require('express-session')
 var exphbs = require('express-handlebars')
 var bodyParser = require('body-parser')
-var PORT = process.env.PORT || 3000
+var env = require('dotenv').load()
 var passport = require("passport")
-
-
-var app = express()
+var PORT = process.env.PORT || 3000
 
 app.use(express.static("public"))
-app.use(bodyParser.urlencoded({ extended: false }))
+
+//BodyParser
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json());
+
+//for passport
+app.use(session({
+  secret: 'hello world', 
+  resave: true, 
+  saveUninitialized:true
+}));
+app.use(passport.initialize())
+app.use(passport.session()); //persistent login sessions
+
+//Handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-app.use(session({secret: 'hello world', resave: true, saveUninitialized:true}))
-app.use(passport.initialize())
-app.use(passport.session())
-
 var routes = require('./controllers/game-controller.js')
-
 app.use('/', routes)
 
-app.listen(PORT, () => {
-	console.log(`App listening on ${PORT}`)
-})
+//Models
+var db = require('./models')
+
+//Routes
+var authRoute = require('./routes/auth.js')(app, passport);
+
+//Passport strategies
+require('./config/passport/passport.js')(passport, db.Users);
+
+//Sync DB
+db.sequelize.sync().then(function() {
+    console.log("Nice! DB looks good")
+    app.listen(PORT, () => {
+      console.log(`App listening on ${PORT}`)
+    })
+  }).catch(function(err) {
+    console.log(err, "SOmething went wrong with the DB update")
+});
