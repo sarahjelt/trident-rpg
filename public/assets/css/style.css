@@ -22,6 +22,10 @@ a {
 	border-radius: 0;
 }
 
+.row {
+	padding: 30px;
+}
+
 .navbar-nav {
 	float: right;
 	margin-top: 16px;

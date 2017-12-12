@@ -60,4 +60,9 @@ router.get('/game', (request, result) => {
 	result.render('index', {layout: 'phaser.handlebars'})
 })
 
+//html route for about page
+router.get('/about', (req, res) => {
+	res.render('about', {layout: 'main.handlebars'})
+})
+
 module.exports = router
