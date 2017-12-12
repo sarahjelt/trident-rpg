@@ -14,6 +14,12 @@ module.exports = function(app, passport) {
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
+    //TEST TEST TEST
+    // app.get('/test', function(req, res, next) {
+    //   console.log(req.session.passport.user.firstname);
+    //   res.render('index');
+    // });
+
     app.get('/logout', authController.logout);
 
     app.post('/signin', passport.authenticate('local-signin', {
@@ -23,8 +29,10 @@ module.exports = function(app, passport) {
     ));
 
     function isLoggedIn(req, res, next) {
-      if (req.isAuthenticated()) 
+      if (req.isAuthenticated()) {
         return next();
+        console.log(req.user);
+      }
       res.redirect('/signin');
     }
 
