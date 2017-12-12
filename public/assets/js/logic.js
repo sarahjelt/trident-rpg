@@ -1,15 +1,30 @@
-console.log('We got to the logic.js page. Sorry, there\'s nothing here yet')
+$(document).ready(function() {
+	$('#findAllGames').on('click', () => {
+		$.ajax({
+			method: 'GET',
+			url: '/api/games'
+		}).done((response) => {
+			console.log(response)
+		})
+	})
 
-// var User = {
-//   name: $("#name").val().trim(),
-//   photo: $("#photo").val().trim(),
-//   scores: [$("#q1").attr("value"), $("#q2").attr("value"), $("#q3").attr("value"), $("#q4").attr("value"), $("#q5").attr("value"), $("#q6").attr("value"), $("#q7").attr("value"), $("#q8").attr("value"), $("#q9").attr("value"), $("#q10").attr("value")]
-// }
+	$('#createNewGame').on('click', () => {
+		let data = {
+			first_player: 'catslug',
+			second_player: null,
+			first_player_score: 0,
+			second_player_score: 0,
+			turn: 'catslug',
+			need_player: true,
+			game_complete: false,
+		}
 
-// $.post("/api/friends", User, function(data) {
-//   $("#matchName").text(data.name);
-//   $("#matchImg").attr("src", data.photo);
-//   $("#resultsModal").modal("toggle");
-// });
-
-// document.getElementById('loggedInUser').innerHTML = User;
+		$.ajax({
+			method: 'POST',
+			url: '/api/games',
+			data: data
+		}).done((response) => {
+			console.log(response)
+		})
+	})
+})
