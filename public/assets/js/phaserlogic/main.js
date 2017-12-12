@@ -1,16 +1,9 @@
-var game = new Phaser.Game(640, 360, Phaser.AUTO);
+var TheGame = TheGame || {};
 
-var GameState = {
-	preload: function() {
-		this.load.image('background', 'assets/images/image.jpg');
-	},
-	create: function() {
-		this.background = this.game.add.sprite(0, 0, 'background');
-	},
-	update: function() {
+TheGame.game = new Phaser.Game(640, 360, Phaser.AUTO);
 
-	}
-};
+TheGame.game.state.add('Boot', TheGame.BootState);
+TheGame.game.state.add('Preload', TheGame.PreloadState);
+TheGame.game.state.add('Game', TheGame.GameState);
 
-game.state.add('GameState', GameState);
-game.state.start('GameState');
+TheGame.game.state.start('Boot');
