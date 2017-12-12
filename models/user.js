@@ -35,10 +35,6 @@ module.exports = function(sequelize, DataTypes) {
 		password: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			// validate: {
-			// 	len: [1,50],
-			// 	isAlphanumeric: true
-			// }
 		},
 		game_id: {
 			type: DataTypes.INTEGER,
@@ -46,14 +42,13 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	})
 
-	// Users.associate = function(models) {
-	// 	Users.hasOne(models.Games, {
-	// 		foreignKey: {
-	// 			allowNull: false
-	// 		},
-	// 		targetKey: id
-	// 	})
-	// }
+	Users.associate = function(models) {
+		Users.hasOne(models.Games, {
+			foreignKey: {
+				allowNull: false
+			}
+		})
+	}
 
 	return Users
 }

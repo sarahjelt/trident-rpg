@@ -11,10 +11,6 @@ module.exports = function(sequelize, DataTypes) {
 		second_player: {
 			type: DataTypes.STRING,
 			allowNull: true,
-			validate: {
-				len: [1,50],
-				isAlphanumeric: true
-			}
 		},
 		first_player_score: {
 			type: DataTypes.INTEGER,
@@ -41,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
 	Games.associate = function(models) {
 		Games.belongsTo(models.Users, {
 			foreignKey: {
-				allowNull: false
+				allowNull: true
 			}
 		})
 	}

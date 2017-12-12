@@ -28,10 +28,10 @@ app.use(passport.session()); //persistent login sessions
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-//var routes = require('./controllers/game-controller.js')
-//app.use('/', routes)
+//Routing 
 var htmlRoutes = require('./controllers/game-controller.js')
 var apiRoutes = require('./controllers/api-controller.js')
+// var userRoutes = require('./controllers/user-controller.js')
 
 app.use('/', htmlRoutes)
 app.use('/api', apiRoutes)
