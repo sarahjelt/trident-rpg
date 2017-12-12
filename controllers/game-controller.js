@@ -16,5 +16,10 @@ router.get('/game', (request, result) => {
 router.get('/buttons', (request, result) => {
 	result.render('buttons')
 })
+  
+//html route for about page
+router.get('/about', (req, res) => {
+	res.render('about', {layout: 'main.handlebars'})
+})
 
 module.exports = router
