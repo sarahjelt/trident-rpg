@@ -9,7 +9,7 @@ TheGame.BootState = {
 
 		this.scale.pageAlignHorizontally = true;
 		this.scale.pageAlignVertically = true;
-	}
+	},
 
 	preload: function() {
 		//for loading screen? or somthing
@@ -17,6 +17,6 @@ TheGame.BootState = {
 	},
 	create: function() {
 		this.state.start('Preload');
-	},
+	}
 
 };
