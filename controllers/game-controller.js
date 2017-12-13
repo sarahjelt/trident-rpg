@@ -12,7 +12,8 @@ router.get('/game', (request, result) => {
 	result.render('index', {layout: 'phaser.handlebars'})
 })
 
-// html route
+// html route 
+// remove this before deploying. this was just for testing.
 router.get('/buttons', (request, result) => {
 	result.render('buttons')
 })

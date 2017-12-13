@@ -5,13 +5,13 @@ var db = require('../models')
 // all routes direct from /api/[whatever]
 // user-specific view screen
 router.get('/user/:username?', (request, result) => {
-	db.Users.findOne({
+	db.Games.findAll({
 		where: {
-			id: request.params.username
-		},
-		include: [db.Games] // joins the games db
+			first_player: request.params.username
+		}
 	}).then(function(dbUser) {
-		result.json(dbUser)
+		console.log('dbUser', dbUser)
+		result.render('viewUserActiveGames',{games: dbUser})
 	})
 })
 
