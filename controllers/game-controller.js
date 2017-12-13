@@ -33,7 +33,8 @@ router.get('/games', (request, result) => {
     })
 });
 
-// html route
+// html route 
+// remove this before deploying. this was just for testing.
 router.get('/buttons', (request, result) => {
 	result.render('buttons', )
 })

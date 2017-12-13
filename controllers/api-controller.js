@@ -2,29 +2,22 @@ var express = require('express')
 var router = express.Router()
 var db = require('../models') 
 
-// login
+// all routes direct from /api/[whatever]
 // user-specific view screen
 router.get('/user/:username?', (request, result) => {
-	db.Users.findOne({
+	db.Games.findAll({
 		where: {
-			id: request.params.username
-		},
-		include: [db.Games] // joins the games db
+			first_player: request.params.username
+		}
 	}).then(function(dbUser) {
-		result.json(dbUser)
+		console.log('dbUser', dbUser)
+		result.render('viewUserActiveGames',{games: dbUser})
 	})
 })
 
-// create a new user
-router.post('/user', (request, result) => {
-	db.Users.create(request.body).then(function(dbUser) {
-		result.json(dbUser)
-	})
-})
-
-// show all active games
+// show all active games 
+// tested and renders
 router.get('/games', (request, result) => {
-	console.log('I got to the /api/games get route')
 	db.Games.findAll({
 		where: {
 			need_player: true
