@@ -1,0 +1,20 @@
+<div class='openGamesContainer'> 
+	<div class='row'>
+		<h1>Your Active Games</h1>
+		<ul>
+			{{#each games}}
+				<div class='user-specific-list'>
+					<p>{{game.id}}: {{first_player}} vs. {{second_player}}</p>
+					<br>
+				</div>
+			{{/each}}
+		</ul>
+		<br>
+	</div>
+
+	<div class='row'>
+		<h1>Create A New Game</h1>
+		<h2>Not playing a game yet?</h2>
+		<button class='createNewGame'>Create A New Game</button>
+	</div>
+</div>

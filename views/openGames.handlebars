@@ -1,0 +1,21 @@
+<div class='openGamesContainer'> 
+	<div class='row'>
+		<h1>Open Games</h1>
+		<ul>
+			{{#each games}}
+				<div class='game-list-li'>
+					<p>{{id}}: {{first_player}}</p>
+					<button class='joinGame' data-id={{id}}>Join Game</button>
+					<br>
+				</div>
+			{{/each}}
+		</ul>
+		<br>
+	</div>
+
+	<div class='row'>
+		<h1>Create A New Game</h1>
+		<h2>Not playing a game yet?</h2>
+		<button class='createNewGame'>Create A New Game</button>
+	</div>
+</div>
