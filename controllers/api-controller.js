@@ -22,17 +22,15 @@ router.post('/user', (request, result) => {
 	})
 })
 
-// find all games and list them for view to user
+// show all active games
 router.get('/games', (request, result) => {
 	console.log('I got to the /api/games get route')
 	db.Games.findAll({
 		where: {
 			need_player: true
-		},
-		include: [db.Users]
+		}
 	}).then(function(dbGames) {
-		console.log('/api/games get all route', dbGames)
-		result.json(dbGames)
+		result.render('openGames', {games: dbGames})
 	})
 })
 
