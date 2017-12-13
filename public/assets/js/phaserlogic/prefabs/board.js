@@ -12,10 +12,14 @@ TheGame.Board = function(state, grid) {
 	//make grid
 	var row, col, tile, x, y;
 	for(row = 0; row < this.rows; row++) {
-		for(col = 0; col < this.cols; cols++) {
-			if(row % 2 === 0) {
-				x = this.state.Margin_X + col * this.state.TILE_W;
-			}
+		for(col = 0; col < this.cols; col++) {
+			x = this.state.MARGIN_X + col * this.state.TILE_W;
+			y = this.state.MARGIN_Y + row * this.state.TILE_H;
+
+			tile = new Phaser.Sprite(this.game, x, y, 'grass');
+
+			this.add(tile);
+
 		}
 	}
 }
