@@ -1,3 +1,5 @@
+var db = require('../models') 
+
 var exports = module.exports = {}
 var db = require('../models')
  
