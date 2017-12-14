@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
 	})
 
 	Games.associate = function(models) {
-		Games.belongsTo(models.Users, {
+		Games.hasOne(models.Users, {
 			foreignKey: {
 				allowNull: true
 			}
