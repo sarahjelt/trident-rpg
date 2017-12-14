@@ -1,3 +1,5 @@
+var db = require('../models') 
+
 var exports = module.exports = {}
 var db = require('../models')
  
@@ -26,5 +28,9 @@ exports.dashboard = function(req, res) {
 exports.logout = function(req, res) {
   req.session.destroy(function(err) {
     res.redirect('/');
-  });
+  })
+}
+
+exports.game = function(req, res) {
+  res.render('phaserView', {layout: 'phaser.handlebars'});
 }

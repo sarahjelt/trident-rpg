@@ -30,8 +30,17 @@ router.get('/games', (request, result) => {
 // create a new game
 router.post('/games', (request, result) => {
 	console.log('I got to the /api/games post route')
-	db.Games.create(request.body).then(function(dbGame) {
+	db.Games.create(request.body, {include: [db.Users]}).then(function(dbGame) {
 		console.log('/api/games post route', dbGame)
+		db.Users.update(
+		{
+			GameId: dbGame.id
+		},
+		{
+			where: {
+				id: 1,
+			},
+		})
 		result.json(dbGame)
 	})
 })
