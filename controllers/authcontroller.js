@@ -1,4 +1,5 @@
 var exports = module.exports = {}
+var db = require('../models')
  
 exports.signup = function(req, res) {
  
@@ -13,7 +14,13 @@ exports.signin = function(req, res) {
 }
 
 exports.dashboard = function(req, res) {
-  res.render('dashboard', {username: req.user.username});
+  db.Games.findAll({
+      where: {
+        need_player: true
+      }
+  }).then(function(dbGames) {
+      res.render('dashboard', {username: req.user.username, games: dbGames});
+  })
 }
 
 exports.logout = function(req, res) {
