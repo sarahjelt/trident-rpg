@@ -16,7 +16,7 @@ TheGame.BootState = {
 		// this.load.image('background', 'assets/images/image.jpg');
 	},
 	create: function() {
-		this.state.start('Preload');
+		this.state.start('preload');
 	}
 
 };
