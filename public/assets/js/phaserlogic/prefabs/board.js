@@ -12,7 +12,7 @@ TheGame.Board = function(state, grid) {
 	this.terrains = [
 		{asset: 'grass'},
 		{asset: 'water', blocked: true},
-		{asset: 'mountain'},
+		{asset: 'mountains2'},
 		{asset: 'trees'}
 	];
 
@@ -35,6 +35,13 @@ TheGame.Board = function(state, grid) {
 
 			tile.inputEnabled = true;
 			tile.input.pixelPerfectClick = true;
+			tile.events.onInputDown.add(function(tile) {
+				var adj = this.moveableSpaces(tile);
+
+				adj.forEach(function(t){
+					t.alpha = 0.3;
+				}, this);
+			}, this);
 
 
 			this.add(tile);
@@ -55,5 +62,43 @@ TheGame.Board.prototype.getFromRowCol = function(row, col) {
 		}
 	}, this);
 
-	return tile;
+	return foundTile;
+};
+
+TheGame.Board.prototype.getXYFromRowCol = function(row, col){
+	var position = {};
+
+	position.x = this.state.MARGIN_X + col * this.state.TILE_W + this.state.TILE_W/2;
+	position.y = this.state.MARGIN_Y + row * this.state.TILE_H + this.state.TILE_H/2;
+
+	return position;
+}; 
+
+TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked) {
+	var adjacentTiles = [];
+	var row = tile.row;
+	var col = tile.col;
+
+	var relativePositions = [
+		{r: -1, c: 0},
+		{r: 1, c: 0},
+		{r: 0, c: -1},
+		{r: 0, c: 1}
+	];
+
+	var adjTile;
+
+	relativePositions.forEach(function(pos){
+		if((row + pos.r >=0) && (row +pos.r < this.rows) && (col + pos.c >= 0) && (col + pos.c < this.cols)) {
+
+			adjTile = this.getFromRowCol (row + pos.r, col + pos.c);
+
+			if(!rejectBlocked || !adjTile.blocked) {
+				adjacentTiles.push(adjTile);
+			}
+		}
+	}, this);
+
+	return adjacentTiles;
+
 };
