@@ -8,13 +8,14 @@ $(document).ready(function() {
 		})
 	})
 
-	$('#createNewGame').on('click', () => {
+	$('.createNewGame').on('click', function() {
+		console.log($(this).attr('data-id'));
 		let data = {
-			first_player: 'catslug',
+			first_player: $(this).attr('data-id'),
 			second_player: null,
 			first_player_score: 0,
 			second_player_score: 0,
-			turn: 'catslug',
+			turn: $(this).attr('data-id'),
 			need_player: true,
 			game_complete: false,
 		}
