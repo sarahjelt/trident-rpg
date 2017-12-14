@@ -10,6 +10,6 @@ TheGame.PreloadState = {
 	},
 
 	create: function() {
-		this.state.start('Game');
+		this.state.start('game');
 	}
 };
