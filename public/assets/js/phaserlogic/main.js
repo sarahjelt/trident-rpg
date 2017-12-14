@@ -1,6 +1,6 @@
 var TheGame = TheGame || {};
 
-TheGame.game = new Phaser.Game(640, 360, Phaser.AUTO);
+TheGame.game = new Phaser.Game(440, 400, Phaser.AUTO);
 
 
 TheGame.game.state.add('boot', TheGame.BootState);
