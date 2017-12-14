@@ -13,6 +13,7 @@ module.exports = function(app, passport) {
     ));
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
+    app.get('/game', isLoggedIn, authController.game); ////
 
     app.get('/logout', authController.logout);
 
@@ -25,7 +26,7 @@ module.exports = function(app, passport) {
     function isLoggedIn(req, res, next) {
       if (req.isAuthenticated()) {
         return next();
-        console.log(req.user);
+        // console.log(req.user);
       }
       res.redirect('/signin');
     }
