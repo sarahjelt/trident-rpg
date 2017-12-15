@@ -35,13 +35,15 @@ TheGame.Board = function(state, grid) {
 
 			tile.inputEnabled = true;
 			tile.input.pixelPerfectClick = true;
-			tile.events.onInputDown.add(function(tile) {
-				var adj = this.moveableSpaces(tile);
 
-				adj.forEach(function(t){
-					t.alpha = 0.3;
-				}, this);
-			}, this);
+			//highlight tiles
+			// tile.events.onInputDown.add(function(tile) {
+			// 	var adj = this.moveableSpaces(tile, true);
+
+			// 	adj.forEach(function(t){
+			// 		t.alpha = 0.3;
+			// 	}, this);
+			// }, this);
 
 
 			this.add(tile);

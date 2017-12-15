@@ -1,0 +1,26 @@
+[
+  {
+  	"asset": "soldier",
+  	"attack": 10,
+  	"defense": 5,
+  	"health": 40,
+  	"row": 0,
+  	"col": 1
+  },
+  {
+  	"asset": "mage",
+  	"attack": 10,
+  	"defense": 5,
+  	"health": 40,
+  	"row": 1,
+  	"col": 1
+  },
+  {
+  	"asset": "assassin",
+  	"attack": 10,
+  	"defense": 5,
+  	"health": 40,
+  	"row": 2,
+  	"col": 1
+  }  
+]

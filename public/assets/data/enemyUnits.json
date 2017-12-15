@@ -1,0 +1,26 @@
+[
+  {
+  	"asset": "bluedragon",
+  	"attack": 10,
+  	"defense": 5,
+  	"health": 40,
+  	"row": 0,
+  	"col": 9
+  },
+  {
+  	"asset": "reddragon",
+  	"attack": 10,
+  	"defense": 5,
+  	"health": 40,
+  	"row": 1,
+  	"col": 9
+  },
+  {
+  	"asset": "spider",
+  	"attack": 10,
+  	"defense": 5,
+  	"health": 40,
+  	"row": 2,
+  	"col": 9
+  }  
+]
