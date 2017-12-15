@@ -1,7 +1,7 @@
 var authController = require('../controllers/authcontroller.js');
- 
+
 module.exports = function(app, passport) {
- 
+
     app.get('/signup', authController.signup);
 
     app.get('/signin', authController.signin);
@@ -30,6 +30,14 @@ module.exports = function(app, passport) {
       }
       res.redirect('/signin');
     }
+
+function isLoggedin(req, res, next) {
+  // check is the user is logged in
+  res.user = {
+    // userdata
+  };
+  next();
+}
 
 };
 
