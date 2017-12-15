@@ -127,6 +127,49 @@ a.nav-right:active {
 	padding-bottom: 10em;
 }
 
+#signin-section {
+	width: 50%;
+	margin: 0 25%;
+	position: relative;
+}
+
+.signin-input {
+	width: 100%;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #46b0cf;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.signin-label-left-password {
+	position: absolute;
+	left: -65px;
+	bottom: 55px;
+	transition: all 1s;
+}
+
+.signin-label-right-password {
+	position: absolute;
+	left: 15px;
+	bottom: 55px;
+	transition: all 1s;
+}
+
+.signin-label-left-email {
+	position: absolute;
+	left: -36px;
+	bottom: 132px;
+	transition: all 1s;
+}
+
+.signin-label-right-email {
+	position: absolute;
+	left: 15px;
+	bottom: 132px;
+	transition: all 1s;
+}
+
 .trGameList {
 	padding: 5px;
 }
