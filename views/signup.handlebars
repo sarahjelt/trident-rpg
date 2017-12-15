@@ -14,21 +14,37 @@
         <h1>Welcome!</h1>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-          <form id="signup" name="signup" method="post" action="/signup">
-            <label for="email">Email Address</label><br>
-            <input class="text" name="email" type="email" /><br><br>
-            <label for="firstname">Firstname</label><br>
-            <input name="firstname" type="text" /><br><br>
-            <label for="lastname">Lastname</label><br>
-            <input name="lastname" type="text" /><br><br>
-            <label for="username">Username</label><br>
-            <input name="username" type="text" /><br><br>
-            <label for="password">Password</label><br>
-            <input name="password" type="password" /><br><br>
-            <input class="btn" type="submit" value="Sign Up" />
-          </form>
+  <div class="row">
+    <div id='register-section' class="col-md-12">
+        <form id="signup" name="signup" method="post" action="/signup">
+          <label id='reg-email-label' class='register-label-right-email' for="email">Email</label><br>
+          <input id='register-input-email' class="signin-input text" name="email" type="email" /><br><br>
+          <label id='reg-first-label' class='register-label-right-first' for="firstname">First Name</label><br>
+          <input id='register-input-first' class="signin-input" name="firstname" type="text" /><br><br>
+          <label id='reg-last-label' class='register-label-right-last' for="lastname">Last Name</label><br>
+          <input id='register-input-last' class="signin-input" name="lastname" type="text" /><br><br>
+          <label id='reg-username-label' class='register-label-right-username' for="username">Username</label><br>
+          <input id='register-input-username' class="signin-input" name="username" type="text" /><br><br>
+          <label id='reg-password-label' class='register-label-right-password' for="password">Password</label><br>
+          <input id='register-input-password' class="signin-input" name="password" type="password" /><br><br>
+          <input class="button-action btn" type="submit" value="Sign Up" />
+        </form>
+    </div>
+  </div>
+
+  <div class='footer row' id='footer-section'>
+    <div class='footer-content'>
+      <div class='col-md-7'>
+        <h4>&copy Copyright 2017 Weird Armies</h4>
+      </div>
+      <div class='col-md-5'>
+        <h3>Get Started</h3>
+        <ul>
+          <li><a href='/signup'>Register<span class='sr-only'>(current)</span></a></li>
+          <li><a href='/signin'>Login</a></li>
+          <li><a href='/about'>About</a></li>
+        </ul>
       </div>
     </div>
+  </div>
 </div>
