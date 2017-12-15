@@ -18,6 +18,7 @@ $(document).ready(function() {
 			turn: $(this).attr('data-username'),
 			need_player: true,
 			game_complete: false,
+			first_player_id: $(this).attr('data-id')
 		}
 
 		$.ajax({
