@@ -3,8 +3,8 @@ var router = express.Router()
 var db = require('../models') 
 
 // html route, home page
-router.get('/', (request, result) => {
-	result.render('index')
+router.get('/', (req, res) => {
+	res.render('index', {user: req.user})
 })
 
 // html route
@@ -20,7 +20,7 @@ router.get('/', (request, result) => {
   
 //html route for about page
 router.get('/about', (req, res) => {
-	res.render('about', {layout: 'main.handlebars'})
+	res.render('about', {layout: 'main.handlebars', user: req.user})
 })
 
 module.exports = router

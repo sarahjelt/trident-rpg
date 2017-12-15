@@ -40,7 +40,7 @@ app.use('/api', apiRoutes)
 var db = require('./models')
 
 //Routes
-var authRoute = require('./routes/auth.js')(app, passport); ///
+var authRoute = require('./routes/auth.js')(app, passport);
 
 //Passport strategies
 require('./config/passport/passport.js')(passport, db.Users);

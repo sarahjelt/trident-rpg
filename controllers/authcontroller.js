@@ -1,11 +1,9 @@
-var db = require('../models') 
-
 var exports = module.exports = {}
 var db = require('../models')
  
 exports.signup = function(req, res) {
  
-    res.render('signup');
+    res.render('signup', {user: req.user});
  
 }
 
@@ -22,7 +20,7 @@ exports.dashboard = function(req, res) {
       }
   }).then(function(dbGames) {
     console.log('the user id is', req.user.id)
-      res.render('dashboard', {username: req.user.username, games: dbGames, userId: req.user.id});
+      res.render('dashboard', {username: req.user.username, games: dbGames, userId: req.user.id, user: req.user});
   })
 }
 
@@ -33,5 +31,5 @@ exports.logout = function(req, res) {
 }
 
 exports.game = function(req, res) {
-  res.render('phaserView', {layout: 'phaser.handlebars'});
+  res.render('phaserView', {layout: 'phaser.handlebars', user: req.user});
 }
