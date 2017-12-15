@@ -31,8 +31,14 @@ $(document).ready(function() {
 	})
 })
 
+// input animation
 $(document).ready(function() {
 	$('.signin-input-email').on('click', () => {
+		$('#email-label').removeClass('signin-label-right-email')
+		$('#email-label').addClass('signin-label-left-email')
+	})
+
+	$('.signin-input-email').focusin(() => {
 		$('#email-label').removeClass('signin-label-right-email')
 		$('#email-label').addClass('signin-label-left-email')
 	})
@@ -49,6 +55,11 @@ $(document).ready(function() {
 		$('#password-label').addClass('signin-label-left-password')
 	})
 
+	$('.signin-input-password').focusin(() => {
+		$('#password-label').removeClass('signin-label-right-password')
+		$('#password-label').addClass('signin-label-left-password')
+	})
+
 	$('.signin-input-password').focusout(() => {
 		if ($('.signin-input-password').val() === '') {
 			$('#password-label').removeClass('signin-label-left-password')
@@ -57,6 +68,11 @@ $(document).ready(function() {
 	})
 
 	$('#register-input-email').on('click', () => {
+		$('#reg-email-label').removeClass('register-label-right-email')
+		$('#reg-email-label').addClass('register-label-left-email')
+	})
+
+	$('#register-input-email').focusin(() => {
 		$('#reg-email-label').removeClass('register-label-right-email')
 		$('#reg-email-label').addClass('register-label-left-email')
 	})
@@ -73,6 +89,11 @@ $(document).ready(function() {
 		$('#reg-first-label').addClass('register-label-left-first')
 	})
 
+	$('#register-input-first').focusin(() => {
+		$('#reg-first-label').removeClass('register-label-right-first')
+		$('#reg-first-label').addClass('register-label-left-first')
+	})
+
 	$('#register-input-first').focusout(() => {
 		if ($('#register-input-first').val() === '') {
 			$('#reg-first-label').removeClass('register-label-left-first')
@@ -81,6 +102,11 @@ $(document).ready(function() {
 	})
 
 	$('#register-input-last').on('click', () => {
+		$('#reg-last-label').removeClass('register-label-right-last')
+		$('#reg-last-label').addClass('register-label-left-last')
+	})
+
+	$('#register-input-last').focusin(() => {
 		$('#reg-last-label').removeClass('register-label-right-last')
 		$('#reg-last-label').addClass('register-label-left-last')
 	})
@@ -97,6 +123,11 @@ $(document).ready(function() {
 		$('#reg-username-label').addClass('register-label-left-username')
 	})
 
+	$('#register-input-username').focusin(() => {
+		$('#reg-username-label').removeClass('register-label-right-username')
+		$('#reg-username-label').addClass('register-label-left-username')
+	})
+
 	$('#register-input-username').focusout(() => {
 		if ($('#register-input-username').val() === '') {
 			$('#reg-username-label').removeClass('register-label-left-username')
@@ -105,6 +136,11 @@ $(document).ready(function() {
 	})
 
 	$('#register-input-password').on('click', () => {
+		$('#reg-password-label').removeClass('register-label-right-password')
+		$('#reg-password-label').addClass('register-label-left-password')
+	})
+
+	$('#register-input-password').focusin(() => {
 		$('#reg-password-label').removeClass('register-label-right-password')
 		$('#reg-password-label').addClass('register-label-left-password')
 	})
