@@ -11,11 +11,11 @@ $(document).ready(function() {
 	$('.createNewGame').on('click', function() {
 		console.log($(this).attr('data-id'));
 		let data = {
-			first_player: $(this).attr('data-id'),
+			first_player: $(this).attr('data-username'),
 			second_player: null,
 			first_player_score: 0,
 			second_player_score: 0,
-			turn: $(this).attr('data-id'),
+			turn: $(this).attr('data-username'),
 			need_player: true,
 			game_complete: false,
 		}

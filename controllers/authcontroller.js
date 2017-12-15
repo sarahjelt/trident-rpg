@@ -21,7 +21,8 @@ exports.dashboard = function(req, res) {
         need_player: true
       }
   }).then(function(dbGames) {
-      res.render('dashboard', {username: req.user.username, games: dbGames});
+    console.log('the user id is', req.user.id)
+      res.render('dashboard', {username: req.user.username, games: dbGames, userId: req.user.id});
   })
 }
 
