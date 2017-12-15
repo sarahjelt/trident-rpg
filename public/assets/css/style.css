@@ -14,6 +14,17 @@ a {
 	text-decoration: none;
 }
 
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
 .container {
 	margin: 0 auto;
 	width: 100%;
@@ -36,17 +47,56 @@ a.nav-right {
 	margin-right: 15px;
 }
 
+a.nav-right:hover,
+a.nav-right:focus,
+a.nav-right:active {
+	text-decoration: none;
+	background-color: #53c7d9;
+}
+
 .jumbotron,
 #header-section {
 	width: 100%;
 	height: 30em;
-	background: url('../images/bluenothingness.jpg');
+	background: url('../images/pixelbg2.jpg');
 	background-size: cover;
 	opacity: 1;
 	color: white;
 	border-radius: 0;
 }
 
+#description-section {
+	width: 80%;
+	margin: 0 10%;
+}
+
+.glyphicon {
+	margin: 0.75em 1.75em;
+	color: #46b0cf;
+}
+
+.sub-description {
+	margin-left: 7.9em;
+	margin-top: -1.1em;
+	font-size: 17px;
+}
+
+#footer-section {
+	background-color: #46b0cf;
+	margin-top: 5em;
+}
+
+.footer-content {
+	width: 70%;
+	margin: 0 15%;
+	padding-bottom: 10em;
+}
+
 .trGameList {
 	padding: 5px;
+}
+
+nav.navbar {
+	margin-bottom: 0;
+	border-bottom: 1px solid black;
 }
