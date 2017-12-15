@@ -55,4 +55,64 @@ $(document).ready(function() {
 			$('#password-label').addClass('signin-label-right-password')
 		} 
 	})
+
+	$('#register-input-email').on('click', () => {
+		$('#reg-email-label').removeClass('register-label-right-email')
+		$('#reg-email-label').addClass('register-label-left-email')
+	})
+
+	$('#register-input-email').focusout(() => {
+		if ($('#register-input-email').val() === '') {
+			$('#reg-email-label').removeClass('register-label-left-email')
+			$('#reg-email-label').addClass('register-label-right-email')
+		}
+	})
+
+	$('#register-input-first').on('click', () => {
+		$('#reg-first-label').removeClass('register-label-right-first')
+		$('#reg-first-label').addClass('register-label-left-first')
+	})
+
+	$('#register-input-first').focusout(() => {
+		if ($('#register-input-first').val() === '') {
+			$('#reg-first-label').removeClass('register-label-left-first')
+			$('#reg-first-label').addClass('register-label-right-first')
+		}
+	})
+
+	$('#register-input-last').on('click', () => {
+		$('#reg-last-label').removeClass('register-label-right-last')
+		$('#reg-last-label').addClass('register-label-left-last')
+	})
+
+	$('#register-input-last').focusout(() => {
+		if ($('#register-input-last').val() === '') {
+			$('#reg-last-label').removeClass('register-label-left-last')
+			$('#reg-last-label').addClass('register-label-right-last')
+		}
+	})
+
+	$('#register-input-username').on('click', () => {
+		$('#reg-username-label').removeClass('register-label-right-username')
+		$('#reg-username-label').addClass('register-label-left-username')
+	})
+
+	$('#register-input-username').focusout(() => {
+		if ($('#register-input-username').val() === '') {
+			$('#reg-username-label').removeClass('register-label-left-username')
+			$('#reg-username-label').addClass('register-label-right-username')
+		}
+	})
+
+	$('#register-input-password').on('click', () => {
+		$('#reg-password-label').removeClass('register-label-right-password')
+		$('#reg-password-label').addClass('register-label-left-password')
+	})
+
+	$('#register-input-password').focusout(() => {
+		if ($('#register-input-password').val() === '') {
+			$('#reg-password-label').removeClass('register-label-left-password')
+			$('#reg-password-label').addClass('register-label-right-password')
+		}
+	})
 })

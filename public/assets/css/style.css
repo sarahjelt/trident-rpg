@@ -127,6 +127,82 @@ a.nav-right:active {
 	padding-bottom: 10em;
 }
 
+#register-section {
+	width: 50%;
+	margin: 0 25%;
+	position: relative;
+}
+
+.register-label-left-email {
+	position: absolute;
+	left: -30px;
+	bottom: 356px;
+	transition: all 1s;
+}
+
+.register-label-right-email {
+	position: absolute;
+	left: 16px;
+	bottom: 356px;
+	transition: all 1s;
+}
+
+.register-label-left-first {
+	position: absolute;
+	left: -65px;
+	bottom: 283px;
+	transition: all 1s;
+}
+
+.register-label-right-first {
+	position: absolute;
+	left: 16px;
+	bottom: 283px;
+	transition: all 1s;
+}
+
+.register-label-left-last {
+	position: absolute;
+	left: -65px;
+	bottom: 205px;
+	transition: all 1s;
+}
+
+.register-label-right-last {
+	position: absolute;
+	left: 16px;
+	bottom: 205px;
+	transition: all 1s;
+}
+
+.register-label-left-username {
+	position: absolute;
+	left: -61px;
+	bottom: 130px;
+	transition: all 1s;
+}
+
+.register-label-right-username {
+	position: absolute;
+	left: 16px;
+	bottom: 130px;
+	transition: all 1s;
+}
+
+.register-label-left-password {
+	position: absolute;
+	left: -58px;
+	bottom: 55px;
+	transition: all 1s;
+}
+
+.register-label-right-password {
+	position: absolute;
+	left: 16px;
+	bottom: 55px;
+	transition: all 1s;
+}
+
 #signin-section {
 	width: 50%;
 	margin: 0 25%;
