@@ -31,15 +31,25 @@ module.exports = function(sequelize, DataTypes) {
 		game_complete: {
 			type: DataTypes.BOOLEAN,
 			allowNull: false
+		},
+		first_player_id: {
+			type: DataTypes.INTEGER,
+			references: {
+				model: 'Users',
+				key: 'id'
+			}
+		},
+		second_player_id: {
+			type: DataTypes.INTEGER,
+			references: {
+				model: 'Users',
+				key: 'id'
+			}
 		}
 	})
 
 	Games.associate = function(models) {
-		Games.hasOne(models.Users, {
-			foreignKey: {
-				allowNull: true
-			}
-		})
+		Games.belongsTo(models.Users)
 	}
 
 	return Games

@@ -31,14 +31,14 @@ router.get('/games', (request, result) => {
 router.post('/games', (request, result) => {
 	console.log('I got to the /api/games post route')
 	db.Games.create(request.body, {include: [db.Users]}).then(function(dbGame) {
-		console.log('/api/games post route', dbGame)
+		console.log('/api/games post route', request.body)
 		db.Users.update(
 		{
 			GameId: dbGame.id
 		},
 		{
 			where: {
-				id: 1,
+				id: 3,
 			},
 		})
 		result.json(dbGame)

@@ -35,19 +35,11 @@ module.exports = function(sequelize, DataTypes) {
 		password: {
 			type: DataTypes.STRING,
 			allowNull: false,
-		},
-		game_id: {
-			type: DataTypes.INTEGER,
-			allowNull: true,
 		}
 	})
 
 	Users.associate = function(models) {
-		Users.belongsTo(models.Games, {
-			foreignKey: {
-				allowNull: true
-			}
-		})
+		Users.hasMany(models.Games)
 	}
 
 	return Users
