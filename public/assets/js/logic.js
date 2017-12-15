@@ -30,3 +30,29 @@ $(document).ready(function() {
 		})
 	})
 })
+
+$(document).ready(function() {
+	$('.signin-input-email').on('click', () => {
+		$('#email-label').removeClass('signin-label-right-email')
+		$('#email-label').addClass('signin-label-left-email')
+	})
+
+	$('.signin-input-email').focusout(() => {
+		if ($('.signin-input-email').val() === '') {
+			$('#email-label').removeClass('signin-label-left-email')
+			$('#email-label').addClass('signin-label-right-email')
+		} 
+	})
+
+	$('.signin-input-password').on('click', () => {
+		$('#password-label').removeClass('signin-label-right-password')
+		$('#password-label').addClass('signin-label-left-password')
+	})
+
+	$('.signin-input-password').focusout(() => {
+		if ($('.signin-input-password').val() === '') {
+			$('#password-label').removeClass('signin-label-left-password')
+			$('#password-label').addClass('signin-label-right-password')
+		} 
+	})
+})

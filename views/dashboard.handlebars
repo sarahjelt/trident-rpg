@@ -13,43 +13,64 @@
   <div class='jumbotron' id='header-section'>
     <h1>Dashboard</h1>
   </div>
+  
+  <div id='dashboard-content-section'>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Welcome back, {{username}}.</h2>
+      </div>
+    </div>
 
-  <div class="row">
-    <div class="col-12">
-      <p>Welcome back, {{username}}.</p>
+  {{!--   <div class='openGamesContainer'> 
+      <div class='row'>
+        <div class='col-md-12'>
+          <div class='panel panel-default'>
+            <div class='panel-heading'>Open Games</div>
+            <div class='panel-body'>
+              The following games are open and ready for you to join!
+            </div>
+            <table class='table openGamesTable'>
+              <tr>
+                <th>Game ID</th>
+                <th>Username</th>
+                <th>Join</th>
+              </tr>
+              {{#each games}}
+                <tr class='trGameList'>
+                  <td>{{id}}</td>
+                  <td>{{first_player}}</td>
+                  <td><button class='joinGame btn btn-md button-action' data-id={{id}}>Join Game</button></td>
+                </tr>
+              {{/each}}     
+            </table>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div> --}}
+
+    <div class='row'>
+      <div class='col-md-12'>
+        <h2>Not playing a game yet?</h2>
+        <a href='/game' class='createNewGame btn btn-md button-action' data-id={{userId}} data-username='{{username}}'>Create A New Game</a>
+      </div>
     </div>
   </div>
 
-{{!--   <div class='openGamesContainer'> 
-    <div class='row'>
-      <div class='panel panel-default'>
-        <div class='panel-heading'>Open Games</div>
-        <div class='panel-body'>
-          The following games are open and ready for you to join!
-        </div>
-        <table class='table openGamesTable'>
-          <tr>
-            <th>Game ID</th>
-            <th>Username</th>
-            <th>Join</th>
-          </tr>
-          {{#each games}}
-            <tr class='trGameList'>
-              <td>{{id}}</td>
-              <td>{{first_player}}</td>
-              <td><button class='joinGame btn btn-md btn-primary' data-id={{id}}>Join Game</button></td>
-            </tr>
-          {{/each}}     
-        </table>
-        <br>
+  <div class='footer row' id='footer-section'>
+    <div class='footer-content'>
+      <div class='col-md-7'>
+        <h4>&copy Copyright 2017 Weird Armies</h4>
+      </div>
+      <div class='col-md-5'>
+        <h3>Get Started</h3>
+        <ul>
+          <li><a href='/signup'>Register<span class='sr-only'>(current)</span></a></li>
+          <li><a href='/signin'>Login</a></li>
+          <li><a href='/about'>About</a></li>
+        </ul>
       </div>
     </div>
-  </div> --}}
-
-      <div class='row'>
-        <h2>Not playing a game yet?</h2>
-          <a href='/game' class='createNewGame btn btn-md btn-primary' data-id={{userId}} data-username='{{username}}'>Create A New Game</a>
-      </div>
-
+  </div>
 
 </div>
