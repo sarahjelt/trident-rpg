@@ -38,7 +38,7 @@ router.post('/games', (request, result) => {
 		},
 		{
 			where: {
-				id: 1,
+				id: 2,
 			},
 		})
 		result.json(dbGame)
