@@ -27,6 +27,13 @@ $(document).ready(function() {
 	// });
 })
 
+// loader gif on phaser page
+$(window).on("load", function() {
+  setTimeout(function() {
+  	$(".loader").fadeOut(500);
+  }, 1200)	
+})
+
 // input animation
 $(document).ready(function() {
 	$('.signin-input-email').on('click', () => {
