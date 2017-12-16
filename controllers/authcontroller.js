@@ -16,7 +16,7 @@ exports.signin = function(req, res) {
 exports.dashboard = function(req, res) {
   db.Games.findAll({
       where: {
-        need_player: true
+        first_player: req.user.username
       }
   }).then(function(dbGames) {
     console.log('the user id is', req.user.id)
@@ -31,5 +31,8 @@ exports.logout = function(req, res) {
 }
 
 exports.game = function(req, res) {
-  res.render('phaserView', {layout: 'phaser.handlebars', user: req.user});
+  db.Allies.findAll({}).then(function(dbAllies) {
+    console.log('dbAllies', dbAllies)
+    res.render('phaserView', {layout: 'phaser.handlebars', user: req.user, allies: dbAllies});
+  })
 }

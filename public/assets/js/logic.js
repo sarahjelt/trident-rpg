@@ -1,13 +1,4 @@
 $(document).ready(function() {
-	$('#findAllGames').on('click', () => {
-		$.ajax({
-			method: 'GET',
-			url: '/api/games'
-		}).done((response) => {
-			console.log(response)
-		})
-	})
-
 	$('.createNewGame').on('click', function() {
 		console.log($(this).attr('data-id'));
 		let data = {
