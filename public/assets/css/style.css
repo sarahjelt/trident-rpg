@@ -254,3 +254,26 @@ nav.navbar {
 	margin-bottom: 0;
 	border-bottom: 1px solid black;
 }
+
+.phaser-background {
+	width: 100%;
+	background-color: #393939;
+	margin: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.game-window-section {
+	width: 70%;
+	margin: 0 15%;
+}
+
+.table-stats {
+	background-color: #e5eaec;
+	border-color: #46b0cf;
+}
+
+#stats-heading {
+	background-color: #46b0cf;
+	border-color: #46b0cf;
+}

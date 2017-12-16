@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='container' id='phaser-page'>
   <nav class="navbar navbar-light bg-faded fixed-top">
       <a class="navbar-brand" href="/">Weird Armies</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -11,60 +11,61 @@
     </div>
   </nav>
 
-  <div class='game-window-section row' id='game-window'>
-  </div>
+  <div class='phaser-background'>
+    <div class='game-window-section row' id='game-window'>
+    </div>
 
-  <div class='row'>
-    <div id='allies-stats'>
-      <div class='panel panel-default'>
-        <div class='panel-heading'>Allies Stats</div>
-        <div class='panel-body'>
-          Important game rules and things the player needs to know.
-        </div>
-        <table class='table statsTable'>
-          <tr>
-            <th>Name</th>
-            <th>Race</th>
-            <th>Age</th>
-            <th>Class</th>
-            <th>Weapon</th>
-            <th>Attack Value</th>
-            <th>Defense Value</th>
-            <th>Health</th>
-          </tr>
-          {{#each allies}}
-            <tr class='trAlliesList'>
-              <td>{{name}}</td>
-              <td>{{race}}</td>
-              <td>{{age}}</td>
-              <td>{{class}}</td>
-              <td>{{weapon}}</td>
-              <td>{{attack_value}}</td>
-              <td>{{defense_value}}</td>
-              <td id='{{name}}'>{{health}}</td>
+    <div class='row'>
+      <div id='allies-stats'>
+        <div class='panel panel-default table-stats'>
+          <div class='panel-heading' id='stats-heading'>Allies Stats</div>
+          <div class='panel-body'>
+            Important game rules and things the player needs to know.
+          </div>
+          <table class='table statsTable'>
+            <tr>
+              <th>Name</th>
+              <th>Race</th>
+              <th>Age</th>
+              <th>Class</th>
+              <th>Weapon</th>
+              <th>Attack Value</th>
+              <th>Defense Value</th>
+              <th>Health</th>
             </tr>
-          {{/each}}     
-        </table>
-        <br>
+            {{#each allies}}
+              <tr class='trAlliesList'>
+                <td>{{name}}</td>
+                <td>{{race}}</td>
+                <td>{{age}}</td>
+                <td>{{class}}</td>
+                <td>{{weapon}}</td>
+                <td>{{attack_value}}</td>
+                <td>{{defense_value}}</td>
+                <td id='{{name}}'>{{health}}</td>
+              </tr>
+            {{/each}}     
+          </table>
+          <br>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class='footer row' id='footer-section'>
-    <div class='footer-content'>
-      <div class='col-md-7'>
-        <h4>&copy Copyright 2017 Weird Armies</h4>
-      </div>
-      <div class='col-md-5'>
-        <h3>Get Started</h3>
-        <ul>
-          <li><a href='/signup'>Register<span class='sr-only'>(current)</span></a></li>
-                {{> login-status/login-block2}}
-          <li><a href='/about'>About</a></li>
-        </ul>
+    <div class='footer row' id='footer-section'>
+      <div class='footer-content'>
+        <div class='col-md-7'>
+          <h4>&copy Copyright 2017 Weird Armies</h4>
+        </div>
+        <div class='col-md-5'>
+          <h3>Get Started</h3>
+          <ul>
+            <li><a href='/signup'>Register<span class='sr-only'>(current)</span></a></li>
+                  {{> login-status/login-block2}}
+            <li><a href='/about'>About</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </div>
