@@ -20,6 +20,11 @@ $(document).ready(function() {
 			console.log(response)
 		})
 	})
+
+	// $('.continueGame').on('click', function() {
+	// 	console.log($(this).attr('data-id'));
+
+	// });
 })
 
 // input animation
