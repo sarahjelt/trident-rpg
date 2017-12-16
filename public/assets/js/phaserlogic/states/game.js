@@ -50,20 +50,22 @@ TheGame.GameState = {
 	},
 	newTurn: function(){
 
-		this.allUnits = [];
+		this.playerUnitTurn = [];
+		this.enemyUnitTurn = [];
 
 		this.playerUnits.forEachAlive(function(unit){
-			this.allUnits.push(unit);
+			this.playerUnitTurn.push(unit);
 		}, this);
 
 		this.enemyUnits.forEachAlive(function(unit){
-			this.allUnits.push(unit);
+			this.enemyUnitTurn.push(unit);
 		}, this);
 
-		this.shuffle(this.allUnits);
+		this.shuffle(this.playerUnitTurn);
+		this.shuffle(this.enemyUnitTurn);
 
-		this.currUnitIndex = 0;
-
+		this.currPlayerUnitIndex = 0;
+		this.currEnemyUnitIndex = 0;
 		this.prepareNextUnit();
 
 
@@ -89,10 +91,10 @@ TheGame.GameState = {
 		return array;
     },
     prepareNextUnit: function(){
-    	if(this.currUnitIndex < this.allUnits.length) {
-    		var unit = this.allUnits[this.currUnitIndex];
+    	if(this.currPlayerUnitIndex < this.playerUnitTurn.length) {
+    		var unit = this.playerUnitTurn[this.currPlayerUnitIndex];
 
-    		this.currUnitIndex++;
+    		this.currPlayerUnitIndex++;
 
     		if(unit.alive){
     			unit.playTurn();
@@ -103,9 +105,28 @@ TheGame.GameState = {
     	}
 
     	else {
+    		this.prepareEnemyUnit();
+    	}
+    },
+    prepareEnemyUnit: function() {
+    	if(this.currEnemyUnitIndex < this.enemyUnitTurn.length) {
+    		var unit = this.enemyUnitTurn[this.currEnemyUnitIndex];
+
+    		this.currEnemyUnitIndex++;
+
+    		if(unit.alive){
+    			unit.playTurn();
+    		}
+    		else{
+    			this.prepareEnemyUnit();
+    		}
+    	}
+
+    	else {
     		this.newTurn();
     	}
     },
+
     initPlaces: function(){
     	var pos = this.board.getXYFromRowCol(this.map.playerBase.row, this.map.playerBase.col);
     	this.playerBase = new Phaser.Sprite(this.game, pos.x, pos.y, this.map.playerBase.asset);
@@ -123,18 +144,22 @@ TheGame.GameState = {
     	this.places.add(this.enemyBase);
     },
     checkWinCon: function() {
-    	var unit = this.allUnits[this.currUnitIndex - 1];
+    	var playerTurnUnit = this.playerUnitTurn[this.currPlayerUnitIndex - 1];
+    	var enemyTurnUnit = this.enemyUnitTurn[this.currEnemyUnitIndex - 1];
 
-    	if(unit.isPlayer) {
-    		if(unit.row === this.enemyBase.row && unit.col === this.enemyBase.col) {
+    	if(playerTurnUnit.isPlayer) {
+    		if(playerTurnUnit.row === this.enemyBase.row && playerTurnUnit.col === this.enemyBase.col) {
     			//player wins
     			console.log('you win!')
+    			alert('youwin')
+    			//TheGame.state.start(winscreen)
     		}
     	}
     	else {
-    		if(unit.row === this.playerBase.row && unit.col === this.playerBase.col) {
+    		if(enemyTurnUnit.row === this.playerBase.row && enemyTurnUnit.col === this.playerBase.col) {
     			//player loses
     			console.log('you lose! :(')
+    			//TheGame.state.start(lossscrean)
     		}
     	}
     }
