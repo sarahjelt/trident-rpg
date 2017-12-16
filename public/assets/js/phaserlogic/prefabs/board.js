@@ -83,9 +83,17 @@ TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked) {
 
 	var relativePositions = [
 		{r: -1, c: 0},
+		{r: -2, c: 0},
 		{r: 1, c: 0},
+		{r: 2, c: 0},
 		{r: 0, c: -1},
-		{r: 0, c: 1}
+		{r: 0, c: 1},
+		{r: 0, c: -2},
+		{r: 0, c: 2},
+		{r: 1, c: 1},
+		{r: -1, c: -1},
+		{r: -1, c: 1},
+		{r: 1, c: -1}
 	];
 
 	var adjTile;

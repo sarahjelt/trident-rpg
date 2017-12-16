@@ -1,26 +1,29 @@
 [
   {
   	"asset": "soldier",
-  	"attack": 10,
-  	"defense": 5,
-  	"health": 40,
-  	"row": 0,
+    "name": "Mina",
+  	"attack": 12,
+  	"defense": 8,
+  	"health": 33,
+  	"row": 2,
   	"col": 1
   },
   {
   	"asset": "mage",
+    "name": "Zara",
   	"attack": 10,
-  	"defense": 5,
-  	"health": 40,
-  	"row": 1,
+  	"defense": 6,
+  	"health": 28,
+  	"row": 4,
   	"col": 1
   },
   {
   	"asset": "assassin",
-  	"attack": 10,
-  	"defense": 5,
+    "name": "Verrus",
+  	"attack": 15,
+  	"defense": 12,
   	"health": 40,
-  	"row": 2,
-  	"col": 1
+  	"row": 3,
+  	"col": 2
   }  
 ]

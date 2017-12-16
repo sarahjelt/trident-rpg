@@ -1,26 +1,43 @@
 [
   {
-  	"asset": "bluedragon",
-  	"attack": 10,
-  	"defense": 5,
-  	"health": 40,
-  	"row": 0,
+  	"asset": "doubletroll",
+  	"attack": 11,
+  	"defense": 7,
+  	"health": 36,
+  	"row": 3,
   	"col": 9
   },
   {
-  	"asset": "reddragon",
-  	"attack": 10,
+  	"asset": "orc",
+  	"attack": 7,
   	"defense": 5,
-  	"health": 40,
+  	"health": 30,
   	"row": 1,
-  	"col": 9
+  	"col": 8
   },
   {
-  	"asset": "spider",
-  	"attack": 10,
+  	"asset": "orc2",
+  	"attack": 7,
   	"defense": 5,
-  	"health": 40,
-  	"row": 2,
-  	"col": 9
-  }  
+  	"health": 30,
+  	"row": 3,
+  	"col": 7
+  },
+  {
+    "asset": "orc3",
+    "attack": 7,
+    "defense": 5,
+    "health": 30,
+    "row": 5,
+    "col": 9
+  },
+  {
+    "asset": "orc4",
+    "attack": 7,
+    "defense": 5,
+    "health": 30,
+    "row": 4,
+    "col": 7
+  }
+
 ]
