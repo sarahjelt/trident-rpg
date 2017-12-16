@@ -6,6 +6,7 @@ var bodyParser = require('body-parser')
 var env = require('dotenv').load()
 var passport = require("passport")
 var PORT = process.env.PORT || 3000
+var path = require('path')
 
 var db = require('./models')
 
@@ -53,4 +54,10 @@ db.sequelize.sync().then(function() {
   }).catch(function(err) {
     console.log(err, "SOmething went wrong with the DB update")
 });
+
+// 404 error page
+app.use(function (req, res, next) {
+  res.status(404);
+  res.sendFile(path.join(__dirname + "/public/assets/404.html"));
+})
 
