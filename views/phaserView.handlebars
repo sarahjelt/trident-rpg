@@ -10,8 +10,46 @@
       </div>
     </div>
   </nav>
-  <div id='game-window'>
+
+  <div class='game-window-section row' id='game-window'>
   </div>
+
+  <div class='row'>
+    <div id='allies-stats'>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>Allies Stats</div>
+        <div class='panel-body'>
+          Important game rules and things the player needs to know.
+        </div>
+        <table class='table statsTable'>
+          <tr>
+            <th>Name</th>
+            <th>Race</th>
+            <th>Age</th>
+            <th>Class</th>
+            <th>Weapon</th>
+            <th>Attack Value</th>
+            <th>Defense Value</th>
+            <th>Health</th>
+          </tr>
+          {{#each allies}}
+            <tr class='trAlliesList'>
+              <td>{{name}}</td>
+              <td>{{race}}</td>
+              <td>{{age}}</td>
+              <td>{{class}}</td>
+              <td>{{weapon}}</td>
+              <td>{{attack_value}}</td>
+              <td>{{defense_value}}</td>
+              <td id='{{name}}'>{{health}}</td>
+            </tr>
+          {{/each}}     
+        </table>
+        <br>
+      </div>
+    </div>
+  </div>
+
   <div class='footer row' id='footer-section'>
     <div class='footer-content'>
       <div class='col-md-7'>
