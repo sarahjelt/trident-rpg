@@ -3,7 +3,7 @@ var TheGame = TheGame || {};
 
 TheGame.BootState = {
 	init: function() {
-		this.game.stage.backgroundColor = '#fff';
+		this.game.stage.backgroundColor = '#393939';
 
 		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 

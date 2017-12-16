@@ -29,6 +29,7 @@ TheGame.Board = function(state, grid) {
 			tile.col = col;
 			tile.terrainAsset = this.terrains[this.grid[row][col]].asset;
 			tile.blocked = this.terrains[this.grid[row][col]].blocked;
+
 			//tile.water
 			//tile.mountain
 			//tile.base
@@ -102,6 +103,8 @@ TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked) {
 		if((row + pos.r >=0) && (row +pos.r < this.rows) && (col + pos.c >= 0) && (col + pos.c < this.cols)) {
 
 			adjTile = this.getFromRowCol (row + pos.r, col + pos.c);
+
+			
 
 			if(!rejectBlocked || !adjTile.blocked) {
 				adjacentTiles.push(adjTile);

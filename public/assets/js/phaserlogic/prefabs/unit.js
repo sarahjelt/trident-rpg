@@ -58,7 +58,6 @@ TheGame.Unit.prototype.moveUnit = function(tile){
 
 		this.checkBattle();
 
-		this.state.checkWinCon();
 
 		this.state.prepareNextUnit();
 
