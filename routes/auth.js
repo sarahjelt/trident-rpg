@@ -31,13 +31,5 @@ module.exports = function(app, passport) {
       res.redirect('/signin');
     }
 
-function isLoggedin(req, res, next) {
-  // check is the user is logged in
-  res.user = {
-    // userdata
-  };
-  next();
-}
-
 };
 

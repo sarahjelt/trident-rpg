@@ -16,7 +16,7 @@ exports.signin = function(req, res) {
 exports.dashboard = function(req, res) {
   db.Games.findAll({
       where: {
-        need_player: true
+        first_player: req.user.username
       }
   }).then(function(dbGames) {
     console.log('the user id is', req.user.id)

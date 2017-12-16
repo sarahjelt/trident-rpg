@@ -31,7 +31,6 @@ app.set('view engine', 'handlebars')
 //Routing 
 var htmlRoutes = require('./controllers/game-controller.js')
 var apiRoutes = require('./controllers/api-controller.js')
-// var userRoutes = require('./controllers/user-controller.js')
 
 app.use('/', htmlRoutes)
 app.use('/api', apiRoutes)

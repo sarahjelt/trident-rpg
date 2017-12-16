@@ -1,12 +1,4 @@
 $(document).ready(function() {
-	$('#findAllGames').on('click', () => {
-		$.ajax({
-			method: 'GET',
-			url: '/api/games'
-		}).done((response) => {
-			console.log(response)
-		})
-	})
 
 	$('.createNewGame').on('click', function() {
 		console.log($(this).attr('data-id'));
@@ -29,6 +21,11 @@ $(document).ready(function() {
 			console.log(response)
 		})
 	})
+
+	// $('.continueGame').on('click', function() {
+	// 	console.log($(this).attr('data-id'));
+
+	// });
 })
 
 // input animation
