@@ -1,0 +1,3 @@
+INSERT INTO Allies (name, race, age, class, weapon, attack_value, defense_value, health) VALUES ('Mina', 'Merva', 31, 'Mervan Mystic', 'Trident', 12, 8, 33);
+INSERT INTO Allies (name, race, age, class, weapon, attack_value, defense_value, health) VALUES ('Zara', 'Merva', 37, 'Mervan Cleric', 'Staff', 10, 6, 28);
+INSERT INTO Allies (name, race, age, class, weapon, attack_value, defense_value, health) VALUES ('Verrus', 'Human', 19, 'Lord', 'Longblade', 15, 12, 40);

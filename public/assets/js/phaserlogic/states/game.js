@@ -125,7 +125,7 @@ TheGame.GameState = {
     checkWinCon: function() {
     	var unit = this.allUnits[this.currUnitIndex - 1];
 
-    	if(unit.isPLayer) {
+    	if(unit.isPlayer) {
     		if(unit.row === this.enemyBase.row && unit.col === this.enemyBase.col) {
     			//player wins
     			console.log('you win!')

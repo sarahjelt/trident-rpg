@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	$('.createNewGame').on('click', function() {
 		console.log($(this).attr('data-id'));
 		let data = {

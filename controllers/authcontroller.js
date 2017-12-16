@@ -31,5 +31,8 @@ exports.logout = function(req, res) {
 }
 
 exports.game = function(req, res) {
-  res.render('phaserView', {layout: 'phaser.handlebars', user: req.user});
+  db.Allies.findAll({}).then(function(dbAllies) {
+    console.log('dbAllies', dbAllies)
+    res.render('phaserView', {layout: 'phaser.handlebars', user: req.user, allies: dbAllies});
+  })
 }

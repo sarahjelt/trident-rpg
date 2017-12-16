@@ -15,6 +15,13 @@ router.get('/user/:username?', (request, result) => {
 	})
 })
 
+// get the stats on the allies
+router.get('/games/allies', (request, result) => {
+	db.Allies.findAll({}).then(function(dbAllies) {
+		console.log('dbAllies', dbAllies)
+	})
+})
+
 // show all active games 
 // tested and renders
 router.get('/games', (request, result) => {
