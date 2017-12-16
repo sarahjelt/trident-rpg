@@ -6,11 +6,12 @@ var bodyParser = require('body-parser')
 var env = require('dotenv').load()
 var passport = require("passport")
 var PORT = process.env.PORT || 3000
-var path = require('path')
+// var path = require('path')
 
 var db = require('./models')
 
 app.use(express.static("public"))
+
 
 //BodyParser
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -58,6 +59,6 @@ db.sequelize.sync().then(function() {
 // 404 error page
 app.use(function (req, res, next) {
   res.status(404);
-  res.sendFile(path.join(__dirname + "/public/assets/404.html"));
+  res.sendFile(__dirname + "/public/assets/404.html");
 })
 
