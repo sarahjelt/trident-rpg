@@ -119,7 +119,7 @@ TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked,) {
 
 			        occupiedPositions.push(occupiedTile);
 
-					if(adjTile === occupiedPositions[0] || adjTile === occupiedPositions[1] || adjTile === occupiedPositions[3] || adjTile.key === 'water'){
+					if(adjTile === occupiedPositions[0] || adjTile === occupiedPositions[1] || adjTile === occupiedPositions[2] || adjTile.key === 'water'){
                         adjTile.blocked = true;
                     } else {
                         adjTile.blocked = false;
