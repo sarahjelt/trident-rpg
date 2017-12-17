@@ -12,6 +12,10 @@ TheGame.Unit = function(state, data) {
   this.col = data.col;
   this.data = data;
 
+
+
+
+
   this.anchor.setTo(0.5);
 
   // this.inputEnabled = true;
@@ -23,6 +27,8 @@ TheGame.Unit = function(state, data) {
 TheGame.Unit.prototype = Object.create(Phaser.Sprite.prototype);
 TheGame.Unit.prototype.constructor = TheGame.Unit;
 
+
+
 TheGame.Unit.prototype.showMovementOptions =  function() {
 
 	this.state.clearSelection(); 
@@ -31,9 +37,18 @@ TheGame.Unit.prototype.showMovementOptions =  function() {
 		return;
 	}
 
+	console.log(TheGame.GameState.playerUnits.children[0].row)
+
+	// for (var i = 0; i < units.length; i++) {
+ //          if (units[i].key === this.key) {
+ //              units[i].row = this.row
+ //              units[i].col = this.col
+ //          }
+ // 	};
+
 	var curTile = this.board.getFromRowCol(this.row, this.col);
 
-	var adjCells = this.board.moveableSpaces(curTile, true);
+	var adjCells = this.board.moveableSpaces(curTile, true, );
 
 	adjCells.forEach(function(tile){
 		tile.alpha = 0.7;

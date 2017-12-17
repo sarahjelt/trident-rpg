@@ -8,6 +8,7 @@ TheGame.Board = function(state, grid) {
 	this.grid = grid;
 	this.rows = grid.length;
 	this.cols = grid[0].length;
+	this.unit = state.unit;
 
 	this.terrains = [
 		{asset: 'grass'},
@@ -77,7 +78,7 @@ TheGame.Board.prototype.getXYFromRowCol = function(row, col){
 	return position;
 }; 
 
-TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked) {
+TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked,) {
 	var adjacentTiles = [];
 	var row = tile.row;
 	var col = tile.col;
@@ -98,20 +99,40 @@ TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked) {
 	];
 
 	var adjTile;
+  	var occupiedPositions = []
 
-	relativePositions.forEach(function(pos){
-		if((row + pos.r >=0) && (row +pos.r < this.rows) && (col + pos.c >= 0) && (col + pos.c < this.cols)) {
 
-			adjTile = this.getFromRowCol (row + pos.r, col + pos.c);
+    relativePositions.forEach(function(pos){
+        if((row + pos.r >=0) && (row +pos.r < this.rows) && (col + pos.c >= 0) && (col + pos.c < this.cols)) {
 
-			
+            adjTile = this.getFromRowCol (row + pos.r, col + pos.c);
 
-			if(!rejectBlocked || !adjTile.blocked) {
-				adjacentTiles.push(adjTile);
-			}
-		}
-	}, this);
+                for (var i = 0; i < TheGame.GameState.playerUnits.children.length; i++) {
+			        var unitObj = {
+			            row: TheGame.GameState.playerUnits.children[i].row,
+			            col: TheGame.GameState.playerUnits.children[i].col
+			        }
 
+
+			        var occupiedTile = this.getFromRowCol(unitObj.row, unitObj.col);
+
+
+			        occupiedPositions.push(occupiedTile);
+
+					if(adjTile === occupiedPositions[0] || adjTile === occupiedPositions[1] || adjTile === occupiedPositions[3] || adjTile.key === 'water'){
+                        adjTile.blocked = true;
+                    } else {
+                        adjTile.blocked = false;
+                    }
+			   	}
+
+
+
+            if(!rejectBlocked || !adjTile.blocked) {
+                adjacentTiles.push(adjTile);
+            }
+        }
+    }, this);
 	return adjacentTiles;
 
 };
