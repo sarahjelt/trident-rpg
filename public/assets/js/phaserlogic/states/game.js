@@ -53,6 +53,8 @@ TheGame.GameState = {
 		this.playerUnitTurn = [];
 		this.enemyUnitTurn = [];
 
+		console.log(this.playerUnitTurn);
+
 		this.playerUnits.forEachAlive(function(unit){
 			this.playerUnitTurn.push(unit);
 		}, this);
