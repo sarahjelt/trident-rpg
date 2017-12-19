@@ -147,11 +147,25 @@ TheGame.GameState = {
     	if(playerTurnUnit.isPlayer) {
     		if(playerTurnUnit.row === this.enemyBase.row && playerTurnUnit.col === this.enemyBase.col) {
     			
-    			alert("win!")
-    			this.overlay = this.add.bitmapData(this.game.width, this.game.height);
-    			this.overlay.ctx.fillStyle = '#000';
-    			this.overlay.ctx.fillRect(0, 0, this.game.width, this.game.height);
+    			console.log('you win')
+    		// 	var gameWidth = 650;
+    		// 	var gameHeight = 255;
+    		// 	this.overlay = this.add.bitmapData(gameWidth, gameHeight);
+    		// 	this.overlay.ctx.fillStyle = '#333';
+    		// 	console.log(this.overlay)
+    		// 	this.overlay.ctx.fillRect(0, 0, gameWidth, gameHeight);
 
+    		// 	this.panel = this.add.sprite(0, gameHeight, this.overlay);
+
+    		// 	var gameOverPanel = this.add.tween(this.panel);
+    		// 	gameOverPanel.to({y: 0}, 500);
+
+    		// 	gameOverPanel.onComplete.add(function(){
+    		// 		var style = {font: '30px Arial', fill: '#fff'};
+    		// 		this.add.text(gameWidth/2, gameHeight/2, 'Game Over', style).anchor.setTo(0.5)
+    		// 	})
+
+    		// 	gameOverPanel.start();
     		}
     	}
     	else {
