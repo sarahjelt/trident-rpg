@@ -6,7 +6,7 @@ TheGame.GameState = {
 		this.TILE_W = 32;
 		this.TILE_H = 32;
 		this.MARGIN_X = 20;
-		this.MARGIN_Y = 5;
+		this.MARGIN_Y = 20;
 	},
 	create: function() {
 		this.map = JSON.parse(this.game.cache.getText('map'));
@@ -49,7 +49,6 @@ TheGame.GameState = {
 		}, this);
 	},
 	newTurn: function(){
-
 		this.playerUnitTurn = [];
 		this.enemyUnitTurn = [];
 
@@ -67,8 +66,6 @@ TheGame.GameState = {
 		this.currPlayerUnitIndex = 0;
 		this.currEnemyUnitIndex = 0;
 		this.prepareNextUnit();
-
-
 	},
 	 //shuffle array method from http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array-in-javascript)
 	shuffle: function(array) {
@@ -121,7 +118,6 @@ TheGame.GameState = {
     			this.prepareEnemyUnit();
     		}
     	}
-
     	else {
     		this.newTurn();
     	}

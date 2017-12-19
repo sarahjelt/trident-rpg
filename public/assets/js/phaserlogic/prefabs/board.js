@@ -64,7 +64,9 @@ TheGame.Board.prototype.getXYFromRowCol = function(row, col){
 	return position;
 }; 
 
+
 TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked, playerTurn) {
+
 	var adjacentTiles = [];
 	var row = tile.row;
 	var col = tile.col;
