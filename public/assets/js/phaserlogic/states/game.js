@@ -145,10 +145,12 @@ TheGame.GameState = {
 
     	if(playerTurnUnit.isPlayer) {
     		if(playerTurnUnit.row === this.enemyBase.row && playerTurnUnit.col === this.enemyBase.col) {
-    			//player wins
-    			console.log('you win!')
-    			alert('youwin')
-    			//TheGame.state.start(winscreen)
+    			
+    			alert("win!")
+    			this.overlay = this.add.bitmapData(this.game.width, this.game.height);
+    			this.overlay.ctx.fillStyle = '#000';
+    			this.overlay.ctx.fillRect(0, 0, this.game.width, this.game.height);
+
     		}
     	}
     	else {

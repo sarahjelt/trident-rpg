@@ -30,22 +30,8 @@ TheGame.Board = function(state, grid) {
 			tile.col = col;
 			tile.terrainAsset = this.terrains[this.grid[row][col]].asset;
 			tile.blocked = this.terrains[this.grid[row][col]].blocked;
-
-			//tile.water
-			//tile.mountain
-			//tile.base
-
 			tile.inputEnabled = true;
 			tile.input.pixelPerfectClick = true;
-
-			//highlight tiles
-			// tile.events.onInputDown.add(function(tile) {
-			// 	var adj = this.moveableSpaces(tile, true);
-
-			// 	adj.forEach(function(t){
-			// 		t.alpha = 0.3;
-			// 	}, this);
-			// }, this);
 
 
 			this.add(tile);
@@ -78,7 +64,9 @@ TheGame.Board.prototype.getXYFromRowCol = function(row, col){
 	return position;
 }; 
 
-TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked) {
+
+TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked, playerTurn) {
+
 	var adjacentTiles = [];
 	var row = tile.row;
 	var col = tile.col;
@@ -107,24 +95,54 @@ TheGame.Board.prototype.moveableSpaces = function(tile, rejectBlocked) {
 
             adjTile = this.getFromRowCol (row + pos.r, col + pos.c);
 
-                for (var i = 0; i < TheGame.GameState.playerUnits.children.length; i++) {
-			        var unitObj = {
-			            row: TheGame.GameState.playerUnits.children[i].row,
-			            col: TheGame.GameState.playerUnits.children[i].col
+            //player options display
+            if(playerTurn) {
+	            for (var i = 0; i < TheGame.GameState.playerUnits.children.length; i++) {
+			        if(TheGame.GameState.playerUnits.children[i].alive){
+			        
+				        var unitObj = {
+				            row: TheGame.GameState.playerUnits.children[i].row,
+				            col: TheGame.GameState.playerUnits.children[i].col
+				        }
+			        
+				        var occupiedTile = this.getFromRowCol(unitObj.row, unitObj.col);
+
+				        occupiedPositions.push(occupiedTile);
+
+						if(adjTile === occupiedPositions[0] || adjTile === occupiedPositions[1] || adjTile === occupiedPositions[2] || adjTile.key === 'water'){
+	                        adjTile.blocked = true;
+	                    } else {
+	                        adjTile.blocked = false;
+	                    }
 			        }
-
-
-			        var occupiedTile = this.getFromRowCol(unitObj.row, unitObj.col);
-
-
-			        occupiedPositions.push(occupiedTile);
-
-					if(adjTile === occupiedPositions[0] || adjTile === occupiedPositions[1] || adjTile === occupiedPositions[2] || adjTile.key === 'water'){
-                        adjTile.blocked = true;
-                    } else {
-                        adjTile.blocked = false;
-                    }
 			   	}
+            }
+
+            //enemy ai movement
+
+            else {
+            	for (var i = 0; i < TheGame.GameState.enemyUnits.children.length; i++) {
+			        if(TheGame.GameState.enemyUnits.children[i].alive){
+			        
+				        var unitObj = {
+				            row: TheGame.GameState.enemyUnits.children[i].row,
+				            col: TheGame.GameState.enemyUnits.children[i].col
+				        }
+			        
+				        var occupiedTile = this.getFromRowCol(unitObj.row, unitObj.col);
+
+				        occupiedPositions.push(occupiedTile);
+
+
+						if(adjTile === occupiedPositions[0] || adjTile === occupiedPositions[1] || adjTile === occupiedPositions[2] || adjTile === occupiedPositions[3] || adjTile === occupiedPositions[4] || adjTile.key === 'water'){
+	                        adjTile.blocked = true;
+	                    } else {
+	                        adjTile.blocked = false;
+	                    }
+			        }
+			   	}
+
+            }
 
 
 
