@@ -211,7 +211,9 @@ TheGame.GameState = {
 			bitmapRect.ctx.fillStyle = '#000058';
 			bitmapRect.ctx.fillRect(0, 0, x, y);
 		
+
 		this.panel = this.add.sprite(20, 244, bitmapRect);
+
 
 
 		var style = {
