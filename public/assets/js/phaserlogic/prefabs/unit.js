@@ -60,6 +60,7 @@ TheGame.Unit.prototype.moveUnit = function(tile){
 
 		this.state.checkWinCon();
 
+
 		this.state.prepareNextUnit();
 
 	}, this);
@@ -125,7 +126,6 @@ TheGame.Unit.prototype.aiEnemyMovement = function() {
 		this.state.playerUnits.forEachAlive(function(unit){
 			if(tile.row === unit.row && tile.col === unit.col) {
 				targetTile = tile;
-				console.log("this happened")
 			}
 		}, this)
 	}, this)	
