@@ -2,7 +2,7 @@
   {
   	"asset": "soldier",
     "name": "Mina",
-  	"attack": 12,
+  	"attack": 11,
   	"defense": 8,
   	"health": 33,
   	"row": 2,
@@ -20,7 +20,7 @@
   {
   	"asset": "assassin",
     "name": "Verrus",
-  	"attack": 15,
+  	"attack": 12,
   	"defense": 12,
   	"health": 40,
   	"row": 3,
