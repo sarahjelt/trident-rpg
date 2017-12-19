@@ -13,7 +13,7 @@ module.exports = function(app, passport) {
     ));
 
     app.get('/dashboard', isLoggedIn, authController.dashboard); 
-    app.get('/game', authController.game); //add isLoggedIn after '/game' to protect route
+    app.get('/game', isLoggedIn, authController.game);
 
     app.get('/logout', authController.logout);
 
