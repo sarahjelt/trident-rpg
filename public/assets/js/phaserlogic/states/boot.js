@@ -7,8 +7,8 @@ TheGame.BootState = {
 
 		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
-		this.scale.pageAlignHorizontally = true;
-		this.scale.pageAlignVertically = true;
+		this.scale.pageAlignHorizontally = false;
+		this.scale.pageAlignVertically = false;
 	},
 
 	preload: function() {

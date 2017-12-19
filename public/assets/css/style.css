@@ -263,6 +263,15 @@ nav.navbar {
 	padding-left: 15px;
 }
 
+canvas {
+	display: block;
+	margin: 0;
+}
+
+#allies-stats {
+	margin-top: -270px;
+}
+
 .game-window-section {
 	width: 70%;
 	margin: 0 15%;
