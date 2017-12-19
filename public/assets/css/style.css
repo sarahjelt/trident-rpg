@@ -77,7 +77,8 @@ a.nav-right:active {
 	border-radius: 0;
 }
 
-#description-section {
+#description-section,
+#about-section {
 	width: 80%;
 	margin: 0 10%;
 }
@@ -94,6 +95,10 @@ a.nav-right:active {
 .sub-description {
 	margin-left: 7.9em;
 	margin-top: -1.1em;
+	font-size: 17px;
+}
+
+.sub-about {
 	font-size: 17px;
 }
 
@@ -114,6 +119,10 @@ a.nav-right:active {
 
 .about-content {
 	line-height: 142%;
+}
+
+.icon-img {
+	width: 100%;
 }
 
 #footer-section {
@@ -269,7 +278,7 @@ canvas {
 }
 
 #allies-stats {
-	margin-top: -270px;
+	margin-top: -180px;
 }
 
 .game-window-section {
