@@ -60,6 +60,7 @@ TheGame.Unit.prototype.moveUnit = function(tile){
 
 		this.state.checkWinCon();
 
+
 		this.state.prepareNextUnit();
 
 	}, this);
