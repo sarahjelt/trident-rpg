@@ -37,6 +37,10 @@ TheGame.PreloadState = {
 		this.load.image('bluedragon', 'assets/images/bluedragon.png');
 		this.load.image('reddragon', 'assets/images/reddragon.png');
 		this.load.image('doubletroll', 'assets/images/doubletroll.png');
+		this.load.image('heart', 'assets/images/heart.png');
+		this.load.image('attack', 'assets/images/attack.png');
+		this.load.image('defense', 'assets/images/defense.png');
+
 	},
 
 	create: function() {
