@@ -19,6 +19,7 @@ TheGame.GameState = {
 		this.initUnits();
 		this.initPlaces();
 		this.newTurn();
+		this.initGui();
 	},
 	initUnits: function() {
 		this.playerUnitsData = JSON.parse(this.game.cache.getText('playerUnits'));
@@ -160,6 +161,40 @@ TheGame.GameState = {
     			//TheGame.state.start(lossscrean)
     		}
     	}
+    },
+    initGui: function() {
+    	var y = this.TILE_H * 2;
+        var x = this.TILE_W * 10;
+        var bitmapRect = this.add.bitmapData(this.x, this.y);
+        bitmapRect.ctx.fillStyle = '#000058';
+        bitmapRect.ctx.fillRect(0, 0, x, y);
+        this.panel = this.add.sprite(50, 229, bitmapRect);
+        var style = {
+            font: '10px Prstart',
+            fill: '#fff',
+            align: 'left'
+        };
+        this.healthIcon = this.add.sprite(175, 235, 'heart');
+        this.healthLabel = this.add.text(185, 250, '', style);
+        //attack
+        this.attackIcon = this.add.sprite(175, 250, 'attack');
+        this.attackLabel = this.add.text(this.game.width - 70, y -10 + 2 * this.TILE_SIZE/2 + 5, '', style);
+        //defense
+        this.defenseIcon = this.add.sprite(175, 270, 'defense');
+        this.defenseLabel = this.add.text(this.game.width - 70, y -10 + 3 * this.TILE_SIZE/2 + 5, '', style);
+        this.charImage = this.add.sprite(100, 245, 'firemage');
+        this.refreshStats();
+    },
+    refreshStats: function(player, health, attack, defense) {
+    	console.log(player, health, attack, defense)
+        // console.log("this works");
+        // var myUnit;
+        // this.playerUnits.forEachAlive(function(unit){
+        // 	this.playerUnitTurn.push(unit);
+       	// 	myUnit = unit;
+        // }, this);
+        // console.log("this also works", myUnit);
+        // this.healthLabel.text = Math.ceil(JSON.parse(this.TheGame.cache.getText('playerUnits'))); 
+        // console.log("finished refresh");
     }
-
 };

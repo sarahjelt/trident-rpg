@@ -105,6 +105,7 @@ TheGame.Unit.prototype.playTurn = function() {
 	if(this.isPlayer) {
 		this.alpha = .7
 		this.showMovementOptions();
+		TheGame.GameState.refreshStats(this.data.asset, this.data.health, this.data.attack, this.data.defense)
 	}
 	else {
 		this.aiEnemyMovement();
