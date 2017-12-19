@@ -279,11 +279,14 @@ canvas {
 
 #allies-stats {
 	margin-top: -180px;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .game-window-section {
 	width: 70%;
-	margin: 0 15%;
+	margin: 0 12% 0 18%;
 }
 
 .table-stats {
