@@ -184,9 +184,6 @@ TheGame.GameState = {
 			bitmapRect.ctx.fillRect(0, 0, x, y);
 		
 		this.panel = this.add.sprite(50, 244, bitmapRect);
-		this.playerUnits.forEachAlive(function(unit){
-		this.playerUnitTurn.push(unit);
-		}, this);
 
 		var style = {
 			font: '10px',
