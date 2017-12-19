@@ -146,44 +146,74 @@ TheGame.GameState = {
     	if(playerTurnUnit.isPlayer) {
     		if(playerTurnUnit.row === this.enemyBase.row && playerTurnUnit.col === this.enemyBase.col) {
     			
-    			console.log('you win')
-    		// 	var gameWidth = 650;
-    		// 	var gameHeight = 255;
-    		// 	this.overlay = this.add.bitmapData(gameWidth, gameHeight);
-    		// 	this.overlay.ctx.fillStyle = '#333';
-    		// 	console.log(this.overlay)
-    		// 	this.overlay.ctx.fillRect(0, 0, gameWidth, gameHeight);
+    			var gameWidth = this.TILE_W * 8;
+    			var gameHeight = this.TILE_H * 2;
+    			this.overlay = this.add.bitmapData(gameWidth, gameHeight);
+    			this.overlay.ctx.fillStyle = '#333';
+    			this.overlay.ctx.fillRect(0, 0, gameWidth, gameHeight);
 
-    		// 	this.panel = this.add.sprite(0, gameHeight, this.overlay);
+    			this.panel = this.add.sprite(60, 122, this.overlay);
+    			this.panel.alpha = 0.8
+    			
 
-    		// 	var gameOverPanel = this.add.tween(this.panel);
-    		// 	gameOverPanel.to({y: 0}, 500);
+				var style = {
+					font: '20px',
+					color: 'white',
+					fill: '#fff',
+					align: 'center'
+				};
 
-    		// 	gameOverPanel.onComplete.add(function(){
-    		// 		var style = {font: '30px Arial', fill: '#fff'};
-    		// 		this.add.text(gameWidth/2, gameHeight/2, 'Game Over', style).anchor.setTo(0.5)
-    		// 	})
+				this.add.text(gameWidth/2 + 60, gameHeight/2 + 122, "You Win!!!!",style).anchor.setTo(0.5);
 
-    		// 	gameOverPanel.start();
+    			var gameOverPanel = this.add.tween(this.panel);
+    			gameOverPanel.to( 0, 500);
+
+
+    			gameOverPanel.start();
     		}
     	}
     	else {
     		if(enemyTurnUnit.row === this.playerBase.row && enemyTurnUnit.col === this.playerBase.col) {
     			//player loses
-    			console.log('you lose! :(')
-    			//TheGame.state.start(lossscrean)
+    			var gameWidth = this.TILE_W * 8;
+    			var gameHeight = this.TILE_H * 2;
+    			this.overlay = this.add.bitmapData(gameWidth, gameHeight);
+    			this.overlay.ctx.fillStyle = '#333';
+    			this.overlay.ctx.fillRect(0, 0, gameWidth, gameHeight);
+
+    			this.panel = this.add.sprite(60, 122, this.overlay);
+    			this.panel.alpha = 0.8
+    			
+
+				var style = {
+					font: '20px',
+					color: 'white',
+					fill: '#fff',
+					align: 'center'
+				};
+
+				this.add.text(gameWidth/2 + 60, gameHeight/2 + 122, "You Lose!!!!",style).anchor.setTo(0.5);
+
+    			var gameOverPanel = this.add.tween(this.panel);
+    			gameOverPanel.to( 0, 500);
+
+
+    			gameOverPanel.start();
     		}
     	}
     },
 	refreshStats: function(player, health, attack, defense) {
 		var y = this.TILE_H * 2;
 		var x = this.TILE_W * 10;
-		
+
 		var bitmapRect = this.add.bitmapData(x, y);
 			bitmapRect.ctx.fillStyle = '#000058';
 			bitmapRect.ctx.fillRect(0, 0, x, y);
-		
+	
+
 		this.panel = this.add.sprite(20, 244, bitmapRect);
+
+
 
 		var style = {
 			font: '10px',
