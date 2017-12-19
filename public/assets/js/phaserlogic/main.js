@@ -1,7 +1,6 @@
 var TheGame = TheGame || {};
 
-TheGame.game = new Phaser.Game(440, 400, Phaser.AUTO, "game-window");
-
+TheGame.game = new Phaser.Game(440, 400, Phaser.AUTO, "game-window", null, true);
 
 TheGame.game.state.add('boot', TheGame.BootState);
 TheGame.game.state.add('preload', TheGame.PreloadState);
