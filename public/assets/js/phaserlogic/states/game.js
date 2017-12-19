@@ -179,11 +179,11 @@ TheGame.GameState = {
 		var y = this.TILE_H * 2;
 		var x = this.TILE_W * 10;
 		
-		var bitmapRect = this.add.bitmapData(this.x, this.y);
+		var bitmapRect = this.add.bitmapData(x, y);
 			bitmapRect.ctx.fillStyle = '#000058';
 			bitmapRect.ctx.fillRect(0, 0, x, y);
 		
-		this.panel = this.add.sprite(50, 244, bitmapRect);
+		this.panel = this.add.sprite(20, 244, bitmapRect);
 
 		var style = {
 			font: '10px',
