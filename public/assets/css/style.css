@@ -25,6 +25,10 @@ ul {
 	padding-left: 0;
 }
 
+label {
+	font-family: 'Montserrat', sans-serif;
+}
+
 .container {
 	margin: 0 auto;
 	width: 100%;
@@ -145,7 +149,7 @@ a.nav-right:active {
 
 .register-label-left-email {
 	position: absolute;
-	left: -30px;
+	left: -40px;
 	bottom: 356px;
 	transition: all 1s;
 }
@@ -159,7 +163,7 @@ a.nav-right:active {
 
 .register-label-left-first {
 	position: absolute;
-	left: -65px;
+	left: -75px;
 	bottom: 283px;
 	transition: all 1s;
 }
@@ -173,7 +177,7 @@ a.nav-right:active {
 
 .register-label-left-last {
 	position: absolute;
-	left: -65px;
+	left: -75px;
 	bottom: 205px;
 	transition: all 1s;
 }
@@ -187,7 +191,7 @@ a.nav-right:active {
 
 .register-label-left-username {
 	position: absolute;
-	left: -61px;
+	left: -71px;
 	bottom: 130px;
 	transition: all 1s;
 }
@@ -201,7 +205,7 @@ a.nav-right:active {
 
 .register-label-left-password {
 	position: absolute;
-	left: -58px;
+	left: -66px;
 	bottom: 55px;
 	transition: all 1s;
 }
