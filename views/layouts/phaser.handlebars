@@ -8,15 +8,28 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 		  crossorigin="anonymous"></script>
 	<script src="/assets/js/logic.js"></script>
-	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Trident of Mina</title>
 	<link rel="icon" href="/assets/images/favicon.png">
 </head>
 <body>
 
-	
-
 	{{{ body }}}
+	
+  <div class='footer row' id='footer-section'>
+	  <div class='footer-content'>
+	    <div class='col-md-7'>
+		    <h4>&copy Copyright 2017 Trident of Mina</h4>
+	    </div>
+	    <div class='col-md-5'>
+	      <h3>Get Started</h3>
+		    <ul>
+		      <li><a href='/signup'>Register<span class='sr-only'>(current)</span></a></li>
+        	  {{> login-status/login-block2}}
+		    </ul>
+	    </div>
+    </div>
+  </div>
 	
 	<script src='assets/js/phaserlogic/phaser.min.js'></script>
 	<script src='assets/js/phaserlogic/states/boot.js'></script>
@@ -25,7 +38,6 @@
 	<script src='assets/js/phaserlogic/prefabs/board.js'></script>
 	<script src='assets/js/phaserlogic/prefabs/unit.js'></script>
 	<script src='assets/js/phaserlogic/main.js'></script>
-	
 
 </body>
 </html>
