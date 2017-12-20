@@ -4,7 +4,7 @@
 
 html, body {
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 	background-color: white;
 }
 
@@ -27,6 +27,11 @@ ul {
 
 label {
 	font-family: 'Montserrat', sans-serif;
+}
+
+table, tbody,
+.tableStats {
+	overflow: hidden;
 }
 
 .page-container {
@@ -286,6 +291,7 @@ nav.navbar {
 	width: 100%;
 	background-color: #393939;
 	margin: 0;
+	margin-bottom: -5em;
 	padding-right: 15px;
 	padding-left: 15px;
 }
@@ -302,6 +308,12 @@ canvas {
 	margin-right: 10%;
 }
 
+@media screen and (max-width: 1000px) {
+	#allies-stats {
+		margin-top: -50px;
+	}
+}
+
 .game-window-section {
 	width: 70%;
 	margin: 0 12% 0 18%;
@@ -310,6 +322,7 @@ canvas {
 .table-stats {
 	background-color: #e5eaec;
 	border-color: #46b0cf;
+	overflow: scroll;
 }
 
 #stats-heading {
